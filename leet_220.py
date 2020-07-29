@@ -24,24 +24,20 @@
 class Solution:
     def containsNearbyAlmostDuplicate(self, nums, k, t):
 
-        recoder = set()
-        max_val = float('-inf')
-        min_val = float('inf')
-        for i in range(len(nums)):
-            if len(recoder):
-                max_val = max(recoder)
-                min_val = min(recoder)
-            if min_val <= (nums[i] + t) and (nums[i] - t) <= max_val:
-                return True
-            else:
-                recoder.add(nums[i])
-            print(recoder)
+        l, r = 0, k+1
 
-            if len(recoder) == k+1:
-                recoder.remove(nums[i-k])
+        while r <= len(nums):
+            max_val = max(nums[l : r])
+            min_val = min(nums[l : r])
+
+            if abs(max_val - min_val) <= t:
+                return True
+
+            l += 1
+            r += 1
 
         return False
 
 
 ss = Solution()
-print(ss.containsNearbyAlmostDuplicate(nums=[1, 5, 9, 1, 5, 9], k=2, t=3))
+print(ss.containsNearbyAlmostDuplicate(nums = [1,2,3,1], k = 3, t = 0))

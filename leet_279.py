@@ -47,7 +47,7 @@
 #         queue = [node(n)]
 #         visited = set([node(n).value])
 #
-#         while queue:
+#         while queue
 #             vertex = queue.pop(0)
 #             residuals = [vertex.value - n * n for n in range(1, int(vertex.value ** .5) + 1)]
 #             for i in residuals:

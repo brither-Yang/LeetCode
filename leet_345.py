@@ -17,9 +17,7 @@
 
 class Solution:
     def reverseVowels(self, s):
-        ss = []
-        for i in s:
-            ss.append(i)
+        ss = [i for i in s]
         i = 0
         j = len(ss) - 1
         l = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
@@ -29,9 +27,9 @@ class Solution:
                 ss[i], ss[j] = ss[j], ss[i]
                 i += 1
                 j -=1
-            elif ss[i] not in l:
+            if ss[i] not in l:
                 i += 1
-            else:
+            if ss[j] not in l:
                 j -= 1
         return ''.join(ss)
 

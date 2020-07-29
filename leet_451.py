@@ -50,5 +50,6 @@ class Solution:
             s += i[0] * i[1]
         return s
 
+
 ss = Solution()
 print(ss.frequencySort('tree'))
